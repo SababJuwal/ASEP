@@ -108,4 +108,8 @@ app.get("/logout", (req, res) => {
 });
 
 // --- START SERVER (Always at the very bottom) ---
-app.listen(3000, () => console.log("Server running at http://localhost:3000"));
+if (require.main === module) {
+  app.listen(3000, () => console.log("Server running at http://localhost:3000"));
+}
+
+module.exports = app;
